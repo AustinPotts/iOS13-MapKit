@@ -21,7 +21,7 @@ class EarthquakesViewController: UIViewController {
         
         
         mapView.delegate = self
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "Quakeview")
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "QuakeView")
         
         quakeFetcher.fetchQuakes { (quakes, error) in
             if let error = error {
@@ -56,12 +56,34 @@ extension EarthquakesViewController: MKMapViewDelegate {
             fatalError("Only quake objects are currently supported")
         }
         
-        guard let annotationview = mapView.dequeueReusableAnnotationView(withIdentifier: "QuakeView", for: annotation) as? MKMarkerAnnotationView else {
+        guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "QuakeView", for: annotation) as? MKMarkerAnnotationView else {
             fatalError("Missing a registered map kit view")
         }
         
-        annotationview.glyphImage = UIImage(named: "QuakeIcon")
-        return annotationview
+        annotationView.glyphImage = UIImage(named: "QuakeIcon")
+        
+        if let magnitude = quake.magnitude {
+               if magnitude >= 5 {
+                   annotationView.markerTintColor = .red
+               } else if magnitude >= 3 && magnitude < 5 {
+                   annotationView.markerTintColor = .orange
+               } else {
+                   annotationView.markerTintColor = .yellow
+               }
+           } else {
+               annotationView.markerTintColor = .white // missing magnitude information
+           }
+           annotationView.canShowCallout = true
+           let detailView = QuakeDetailView()
+           detailView.quake = quake
+           annotationView.detailCalloutAccessoryView = detailView
+        
+        
+        
+        
+      
+        
+        return annotationView
         
     }
     
