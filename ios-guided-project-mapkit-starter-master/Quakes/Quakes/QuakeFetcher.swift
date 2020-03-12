@@ -80,7 +80,9 @@ class QuakeFetcher {
                         
             do {
                 // TODO: Implement decoding and completion call
-
+              let decoder = JSONDecoder()
+             let fetchedQuakes = try decoder.decode(QuakeResults.self, from: data)
+                completion(fetchedQuakes.quakes, nil)
 
                 
             } catch {
