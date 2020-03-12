@@ -10,6 +10,7 @@
 		456A6938241AA68D00EABE0D /* QuakeResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456A6937241AA68D00EABE0D /* QuakeResults.swift */; };
 		456A6939241AA73700EABE0D /* QuakeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD482541236B3C4F00FC12E9 /* QuakeDetailView.swift */; };
 		456A693A241AA7FB00EABE0D /* QuakeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69304923F5DDAA00C0DF09 /* QuakeFetcher.swift */; };
+		456A693C241AAE8000EABE0D /* Quake+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456A693B241AAE8000EABE0D /* Quake+MKAnnotation.swift */; };
 		45906256241A997200743B18 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45906255241A997200743B18 /* Quake.swift */; };
 		45906259241A9F2D00743B18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45906258241A9F2D00743B18 /* MapKit.framework */; };
 		BD48251A236B3B6600FC12E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD482519236B3B6600FC12E9 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		456A6937241AA68D00EABE0D /* QuakeResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeResults.swift; sourceTree = "<group>"; };
+		456A693B241AAE8000EABE0D /* Quake+MKAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quake+MKAnnotation.swift"; sourceTree = "<group>"; };
 		45906255241A997200743B18 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
 		45906258241A9F2D00743B18 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD482516236B3B6600FC12E9 /* Quakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				45906255241A997200743B18 /* Quake.swift */,
 				BD48251B236B3B6600FC12E9 /* SceneDelegate.swift */,
 				BD48253B236B3BD500FC12E9 /* EarthquakesViewController.swift */,
+				456A693B241AAE8000EABE0D /* Quake+MKAnnotation.swift */,
 				BD482541236B3C4F00FC12E9 /* QuakeDetailView.swift */,
 				BD69304923F5DDAA00C0DF09 /* QuakeFetcher.swift */,
 				BD6DDD1A23993CB100CA2A91 /* Main.storyboard */,
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456A693C241AAE8000EABE0D /* Quake+MKAnnotation.swift in Sources */,
 				BD48251A236B3B6600FC12E9 /* AppDelegate.swift in Sources */,
 				456A693A241AA7FB00EABE0D /* QuakeFetcher.swift in Sources */,
 				45906256241A997200743B18 /* Quake.swift in Sources */,
