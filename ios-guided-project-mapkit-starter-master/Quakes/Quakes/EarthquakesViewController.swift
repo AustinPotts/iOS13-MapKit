@@ -19,6 +19,10 @@ class EarthquakesViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
         
+        
+        mapView.delegate = self
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "Quakeview")
+        
         quakeFetcher.fetchQuakes { (quakes, error) in
             if let error = error {
                 print("Error fetching quakes \(error)")
@@ -43,4 +47,22 @@ class EarthquakesViewController: UIViewController {
         }
 		
 	}
+}
+
+extension EarthquakesViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let quake = annotation as? Quake else {
+            fatalError("Only quake objects are currently supported")
+        }
+        
+        guard let annotationview = mapView.dequeueReusableAnnotationView(withIdentifier: "QuakeView", for: annotation) as? MKMarkerAnnotationView else {
+            fatalError("Missing a registered map kit view")
+        }
+        
+        annotationview.glyphImage = UIImage(named: "QuakeIcon")
+        return annotationview
+        
+    }
+    
 }
